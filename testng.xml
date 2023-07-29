@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+    <listeners>
+
+        <listener class-name="utils.listeners.TestListeners"/>
+    </listeners>
+
+    <test thread-count="1" name="Test">
+        <classes>
+            <!-- Adding the test class here. we can create different test file, also multiple test suit here. -->
+            <class name="Tests_AdminCapabilities"/>
+            <class name="Test_NonAdminCapabilities"/>
+            <class name="Api_based_Negartive_Case"/>
+        </classes>
+    </test>
+</suite>
