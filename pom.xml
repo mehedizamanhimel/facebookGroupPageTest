@@ -76,21 +76,21 @@
             <version>${log4j.version}</version>
         </dependency>
 
-        <!-- Migrated from abandoned com.relevantcodes to com.aventstack -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>${extentreports.version}</version>
         </dependency>
 
+        <!-- compile scope: FBPostCommentApi and LoginApi in src/main/java/Api
+             import io.restassured.* — must be visible at compile phase -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${restassured.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
 
-        <!-- xml-path version aligned with rest-assured (was 3.0.0, caused classpath conflict) -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>xml-path</artifactId>
@@ -129,7 +129,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${suitXmlFile}</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
